@@ -4,7 +4,7 @@ import CourseCard from "@/components/CourseCard";
 import TrustBand from "@/components/TrustBand";
 import Steps from "@/components/Steps";
 import FaqList from "@/components/FaqList";
-import { ADDITIONAL_SPECIALITIES, COURSES, FAQS } from "@/lib/data";
+import { ADDITIONAL_SPECIALITIES, COURSE_MAP, COURSES, FAQS } from "@/lib/data";
 import { TRIAL_MESSAGE, whatsappUrl } from "@/lib/site";
 
 // Where each "Why Families Choose Us" box links to — same order as
@@ -24,6 +24,30 @@ const SPECIALITY_HREFS = [
   "/contact", // 3-Day Absolutely FREE Trial Classes
 ];
 
+// The 14 specialities in the EXACT order of the client's reference design —
+// first row, then second row (7 × 2). Only the home-page grid uses this
+// order; the /courses page keeps its own syllabus order.
+const SPECIALITY_ORDER = [
+  "quran-translation",
+  "noorani-qaida",
+  "masnoon-duas",
+  "salah-namaz",
+  "islamic-studies",
+  "hifz-ul-quran",
+  "tajweed",
+  "quran-reading-nazra",
+  "selected-surah-memorization",
+  "six-kalimas",
+  "basic-arabic-learning",
+  "quran-tafseer",
+  "seerah",
+  "islamic-manners-ethics",
+];
+
+const HOME_SPECIALITIES = SPECIALITY_ORDER.map((slug) => COURSE_MAP[slug]).filter(
+  Boolean,
+);
+
 export default function HomePage() {
   return (
     <>
@@ -40,7 +64,7 @@ export default function HomePage() {
             <span className="h-[2px] w-10 rounded-full bg-brandRed sm:w-24" aria-hidden="true" />
           </div>
           <div className="mt-9 grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3 lg:grid-cols-7">
-            {COURSES.map((c) => (
+            {HOME_SPECIALITIES.map((c) => (
               <CourseCard key={c.slug} course={c} />
             ))}
           </div>

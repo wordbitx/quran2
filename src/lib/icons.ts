@@ -38,7 +38,7 @@ const ARABIC_FONT =
 function icon(uid: string, shapes: string, extras = "", vb = "0 0 64 64"): string {
   const b = `${uid}b`;
   const s = `${uid}s`;
-  return `<svg viewBox="${vb}" aria-hidden="true"><defs><linearGradient id="${b}" x1="0" y1="0" x2="0.3" y2="1"><stop offset="0" stop-color="#4aa4f6"/><stop offset="0.45" stop-color="#1a6fdc"/><stop offset="0.74" stop-color="#1256bd"/><stop offset="1" stop-color="#0b3d91"/></linearGradient><linearGradient id="${s}" x1="0.1" y1="0" x2="0.55" y2="1"><stop offset="0" stop-color="${WHITE}" stop-opacity="0.46"/><stop offset="0.4" stop-color="${WHITE}" stop-opacity="0.1"/><stop offset="0.5" stop-color="${WHITE}" stop-opacity="0"/><stop offset="0.8" stop-color="#04122e" stop-opacity="0"/><stop offset="1" stop-color="#04122e" stop-opacity="0.22"/></linearGradient></defs><g fill="url(#${b})">${shapes}</g><g fill="url(#${s})">${shapes}</g>${extras}</svg>`;
+  return `<svg viewBox="${vb}" aria-hidden="true"><defs><linearGradient id="${b}" x1="0" y1="0" x2="0.3" y2="1"><stop offset="0" stop-color="#4aa4f6"/><stop offset="0.45" stop-color="#1a6fdc"/><stop offset="0.74" stop-color="#1256bd"/><stop offset="1" stop-color="#0b3d91"/></linearGradient><linearGradient id="${s}" x1="0.1" y1="0" x2="0.55" y2="1"><stop offset="0" stop-color="${WHITE}" stop-opacity="0.16"/><stop offset="0.42" stop-color="${WHITE}" stop-opacity="0.03"/><stop offset="0.5" stop-color="${WHITE}" stop-opacity="0"/><stop offset="0.8" stop-color="#04122e" stop-opacity="0"/><stop offset="1" stop-color="#04122e" stop-opacity="0.22"/></linearGradient></defs><g fill="url(#${b})">${shapes}</g><g fill="url(#${s})">${shapes}</g>${extras}</svg>`;
 }
 
 // ---------------------------------------------------------------- paths ----
@@ -51,6 +51,12 @@ const P_MOSQUE = `M400 0c5 0 9.8 2.4 12.8 6.4c34.7 46.3 78.1 74.9 133.5 111.5c0 
 
 /** Font Awesome Free 6.7.2 — solid "graduation-cap" (viewBox 0 0 640 512). */
 const P_GRAD_CAP = `M320 32c-8.1 0-16.1 1.4-23.7 4.1L15.8 137.4C6.3 140.9 0 149.9 0 160s6.3 19.1 15.8 22.6l57.9 20.9C57.3 229.3 48 259.8 48 291.9l0 28.1c0 28.4-10.8 57.7-22.3 80.8c-6.5 13-13.9 25.8-22.5 37.6C0 442.7-.9 448.3 .9 453.4s6 8.9 11.2 10.2l64 16c4.2 1.1 8.7 .3 12.4-2s6.3-6.1 7.1-10.4c8.6-42.8 4.3-81.2-2.1-108.7C90.3 344.3 86 329.8 80 316.5l0-24.6c0-30.2 10.2-58.7 27.9-81.5c12.9-15.5 29.6-28 49.2-35.7l157-61.7c8.2-3.2 17.5 .8 20.7 9s-.8 17.5-9 20.7l-157 61.7c-12.4 4.9-23.3 12.4-32.2 21.6l159.6 57.6c7.6 2.7 15.6 4.1 23.7 4.1s16.1-1.4 23.7-4.1L624.2 182.6c9.5-3.4 15.8-12.5 15.8-22.6s-6.3-19.1-15.8-22.6L343.7 36.1C336.1 33.4 328.1 32 320 32zM128 408c0 35.3 86 72 192 72s192-36.7 192-72L496.7 262.6 354.5 314c-11.1 4-22.8 6-34.5 6s-23.5-2-34.5-6L143.3 262.6 128 408z`;
+
+/** Font Awesome Free 6.7.2 — solid "book-quran" (viewBox 0 0 448 512). */
+const P_BOOK_QURAN = `M352 0c53 0 96 43 96 96l0 320c0 53-43 96-96 96L64 512l-32 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l0-64c-17.7 0-32-14.3-32-32L0 32C0 14.3 14.3 0 32 0L64 0 352 0zm0 384L96 384l0 64 256 0c17.7 0 32-14.3 32-32s-14.3-32-32-32zM96 192c0 70.7 57.3 128 128 128c25.6 0 49.5-7.5 69.5-20.5c3.2-2.1 4.5-6.2 3.1-9.7s-5.2-5.6-9-4.8c-6.1 1.2-12.5 1.9-19 1.9c-52.4 0-94.9-42.5-94.9-94.9s42.5-94.9 94.9-94.9c6.5 0 12.8 .7 19 1.9c3.8 .8 7.5-1.3 9-4.8s.2-7.6-3.1-9.7C273.5 71.5 249.6 64 224 64C153.3 64 96 121.3 96 192z`;
+
+/** The small star that sits inside the Quran's crescent. */
+const P_QURAN_STAR = `M274.1 150.2l-8.9 21.4-23.1 1.9c-5.7 .5-8 7.5-3.7 11.2L256 199.8l-5.4 22.6c-1.3 5.5 4.7 9.9 9.6 6.9L280 217.2l19.8 12.1c4.9 3 10.9-1.4 9.6-6.9L304 199.8l17.6-15.1c4.3-3.7 2-10.8-3.7-11.2l-23.1-1.9-8.9-21.4c-2.2-5.3-9.6-5.3-11.8 0z`;
 
 /** Font Awesome Free 6.7.2 — solid "book-bookmark" (viewBox 0 0 448 512). */
 const P_BOOK_BOOKMARK = `M0 96C0 43 43 0 96 0l96 0 0 190.7c0 13.4 15.5 20.9 26 12.5L272 160l54 43.2c10.5 8.4 26 .9 26-12.5L352 0l32 0 32 0c17.7 0 32 14.3 32 32l0 320c0 17.7-14.3 32-32 32l0 64c17.7 0 32 14.3 32 32s-14.3 32-32 32l-32 0L96 512c-53 0-96-43-96-96L0 96zM64 416c0 17.7 14.3 32 32 32l256 0 0-64L96 384c-17.7 0-32 14.3-32 32z`;
@@ -69,8 +75,14 @@ const P_MOSQUE_SKYLINE = `M7 8H17C17.3 8 17.6 8.1 17.8 8.1C17.9 7.8 18 7.4 18 7.
 
 // ---------------------------------------------------------------- icons ----
 
-/** Quran Translation — open book (FA book-open). */
-const BOOK_OPEN = icon("qlBookOpen", `<path d="${P_BOOK_OPEN}"/>`, "", "0 0 576 512");
+/** Quran Translation — the Holy Quran itself (FA book-quran), crescent and a
+ *  red star on the cover. */
+const BOOK_QURAN = icon(
+  "qlQuranBook",
+  `<path d="${P_BOOK_QURAN}"/>`,
+  `<path d="${P_QURAN_STAR}" fill="${RED}"/>`,
+  "0 0 448 512",
+);
 
 /** Quran Reading (Nazra) — open book with the red bookmark ribbons. */
 const BOOK_OPEN_RIBBON = icon(
@@ -107,7 +119,7 @@ const BOOK_OPEN_VARIANT = icon(
 /** Tajweed — Arabic calligraphy in Nastaliq. */
 const TAJWEED_TEXT = icon(
   "qlTajweed",
-  `<text x="32" y="42" text-anchor="middle" font-size="19" font-weight="700" font-family="${NASTALIQ_FONT}">تجويد</text>`,
+  `<text x="32" y="42" text-anchor="middle" font-size="22" font-weight="700" font-family="${NASTALIQ_FONT}">تجويد</text>`,
 );
 
 /** Selected Surah Memorization — closed book with a red bookmark. */
@@ -128,7 +140,7 @@ const SIX_KALIMAS = icon(
 /** Basic Arabic Learning — Arabic calligraphy in Nastaliq (عربي). */
 const ARABIC_TEXT = icon(
   "qlArabic",
-  `<text x="32" y="42" text-anchor="middle" font-size="19" font-weight="700" font-family="${NASTALIQ_FONT}">عربي</text>`,
+  `<text x="32" y="42" text-anchor="middle" font-size="22" font-weight="700" font-family="${NASTALIQ_FONT}">عربي</text>`,
 );
 
 /** Quran Tafseer — mosque with dome and two minarets (MDI mosque). */
@@ -142,7 +154,7 @@ const MOSQUE_SKYLINE = icon(
 /** Seerah of Prophet Muhammad ﷺ — Arabic calligraphy in Nastaliq. */
 const SEERAH_TEXT = icon(
   "qlSeerah",
-  `<text x="32" y="42" text-anchor="middle" font-size="17" font-weight="700" font-family="${NASTALIQ_FONT}">محمد ﷺ</text>`,
+  `<text x="32" y="44" text-anchor="middle" font-size="24" font-weight="700" font-family="${NASTALIQ_FONT}">محمد</text>`,
 );
 
 /** Islamic Manners & Ethics — handshake (FA handshake). */
@@ -150,7 +162,7 @@ const HANDSHAKE = icon("qlManners", `<path d="${P_HANDSHAKE}"/>`, "", "0 0 640 5
 
 /** Icon SVG by course slug. Every slug has an entry — no fallback needed. */
 export const COURSE_ICONS: Record<string, string> = {
-  "quran-translation": BOOK_OPEN, // Font Awesome — book-open
+  "quran-translation": BOOK_QURAN, // Font Awesome — book-quran (closed Quran)
   "noorani-qaida": QAIDA_BADGE, // reference "A + Arabic letter tiles" badge
   "masnoon-duas": HANDS_PRAY, // MDI — hands-pray
   "salah-namaz": MOSQUE, // Font Awesome — mosque
