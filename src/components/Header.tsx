@@ -38,19 +38,19 @@ export default function Header() {
   // the hero), like the reference — a sticky header would clip it.
   return (
     <header className="site relative z-40 border-b border-line bg-white">
-      <div className="mx-auto flex h-[82px] max-w-7xl items-center gap-3 px-3 sm:h-[92px] sm:px-4 lg:h-[96px] xl:h-[104px]">
+      <div className="mx-auto flex h-[84px] max-w-7xl items-center gap-2 px-3 sm:h-[92px] sm:gap-3 sm:px-4 lg:h-[96px] xl:h-[104px]">
         <Link
           href="/"
-          className="brand relative flex items-center gap-2.5 sm:gap-3"
+          className="brand relative flex items-center gap-2 sm:gap-3"
           aria-label="Quran Light Institute — home"
         >
           {/* White disc that carries the overhanging logo over the dark top
               bar — exactly the reference's white circle around the logo. */}
           <span
-            className="pointer-events-none absolute -left-[8px] top-1/2 h-[104px] w-[104px] -translate-y-1/2 rounded-full bg-white sm:-left-[12px] sm:h-[120px] sm:w-[120px] lg:h-[134px] lg:w-[134px] xl:h-[150px] xl:w-[150px]"
+            className="pointer-events-none absolute -left-[8px] top-1/2 h-[100px] w-[100px] -translate-y-1/2 rounded-full bg-white sm:-left-[12px] sm:h-[120px] sm:w-[120px] lg:h-[134px] lg:w-[134px] xl:h-[150px] xl:w-[150px]"
             aria-hidden="true"
           />
-          <span className="logo-shine relative z-10 block h-[88px] w-[88px] shrink-0 rounded-full ring-[3px] ring-white drop-shadow-[0_6px_14px_rgba(6,36,83,0.22)] sm:h-[100px] sm:w-[100px] lg:h-[110px] lg:w-[110px] xl:h-[126px] xl:w-[126px]">
+          <span className="logo-shine relative z-10 block h-[84px] w-[84px] shrink-0 rounded-full ring-[3px] ring-white drop-shadow-[0_6px_14px_rgba(6,36,83,0.22)] sm:h-[100px] sm:w-[100px] lg:h-[110px] lg:w-[110px] xl:h-[126px] xl:w-[126px]">
             <Image
               src="/logo.jpg"
               alt="Quran Light Institute logo"
@@ -62,16 +62,16 @@ export default function Header() {
           </span>
 
           <span className="wordmark relative z-10 leading-none">
-            <span className="block text-[1.06rem] font-extrabold leading-none tracking-tight sm:text-[1.55rem] lg:text-[2rem] xl:text-[2.3rem]">
+            <span className="block text-[1.22rem] font-extrabold leading-none tracking-tight sm:text-[1.55rem] lg:text-[2rem] xl:text-[2.3rem]">
               <span className="text-[#0b3b8f]">Quran</span>{" "}
               <span className="text-[#c8102e]">Light</span>
             </span>
-            <span className="mt-[5px] flex items-center gap-1.5 sm:mt-[7px] sm:gap-2">
+            <span className="mt-[6px] flex items-center gap-1.5 sm:mt-[7px] sm:gap-2">
               <span className="flex flex-col gap-[3px]" aria-hidden="true">
                 <span className="h-[2px] w-2.5 rounded-full bg-brandRed sm:w-5 lg:w-9" />
                 <span className="h-[2px] w-2.5 rounded-full bg-brandRed sm:w-5 lg:w-9" />
               </span>
-              <span className="text-[0.56rem] font-extrabold tracking-[2.5px] text-navy sm:text-[0.86rem] sm:tracking-[5px] lg:text-[1.02rem] lg:tracking-[7px]">
+              <span className="text-[0.62rem] font-extrabold tracking-[2.6px] text-navy sm:text-[0.86rem] sm:tracking-[5px] lg:text-[1.02rem] lg:tracking-[7px]">
                 INSTITUTE
               </span>
               <span className="flex flex-col gap-[3px]" aria-hidden="true">
@@ -79,7 +79,7 @@ export default function Header() {
                 <span className="h-[2px] w-2.5 rounded-full bg-brandRed sm:w-5 lg:w-9" />
               </span>
             </span>
-            <span className="tagline-ribbon mt-[5px] inline-block px-2 py-[2px] text-[0.52rem] font-bold text-white sm:mt-[8px] sm:px-3 sm:py-[3px] sm:text-[0.7rem] lg:mt-[9px] lg:px-4 lg:text-[0.82rem]">
+            <span className="tagline-ribbon mt-[6px] inline-block px-2.5 py-[3px] text-[0.57rem] font-bold text-white sm:mt-[8px] sm:px-3 sm:py-[3px] sm:text-[0.7rem] lg:mt-[9px] lg:px-4 lg:text-[0.82rem]">
               {SITE_TAGLINE}
             </span>
           </span>
@@ -93,7 +93,7 @@ export default function Header() {
 
         <button
           type="button"
-          className="ml-auto flex h-11 w-11 items-center justify-center rounded-lg border border-line text-navy xl:hidden"
+          className="ml-auto flex h-10 w-10 items-center justify-center rounded-lg border border-line text-navy xl:hidden"
           aria-label="Toggle menu"
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}

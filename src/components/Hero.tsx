@@ -37,22 +37,6 @@ function FeatureIcon({ kind }: { kind: string }) {
   );
 }
 
-/** Faint mosque skyline drawn along the bottom of the hero (reference motif). */
-function Skyline() {
-  return (
-    <svg
-      className="pointer-events-none absolute bottom-0 left-0 h-[120px] w-[52%] text-[#cfe1fa] max-[1023px]:hidden"
-      viewBox="0 0 600 120"
-      fill="currentColor"
-      preserveAspectRatio="none"
-      aria-hidden="true"
-    >
-      <path d="M0 120V70h14V54c0-6 5-9 8-13 3 4 8 7 8 13v16h12v-9c0-4 3-6 5-9 2 3 5 5 5 9v9h10V58c0-14 9-24 15-30 6 6 15 16 15 30v40h14v-10c0-5 3-8 6-11 3 3 6 6 6 11v10h9V62c0-16 10-27 16-34 6 7 16 18 16 34v36h12v-8c0-4 3-7 6-9 3 2 6 5 6 9v8h10V66h14V54c0-6 5-9 8-13 3 4 8 7 8 13v12h14v54H312v-20c0-9 7-15 15-15s15 6 15 15v20H0zm430 0V68h12V56c0-5 4-8 7-11 3 3 7 6 7 11v12h10V46c0-13 8-22 14-28 6 6 14 15 14 28v22h10V56c0-5 4-8 7-11 3 3 7 6 7 11v12h10v52z" />
-      <path d="M470 0c6 8 8 16 8 24h-16c0-8 2-16 8-24z" />
-    </svg>
-  );
-}
-
 /**
  * Hero — the client's approved design, reproduced:
  * italic serif intro line with the red swoosh under it, "One-to-One Online"
@@ -65,7 +49,6 @@ export default function Hero() {
   return (
     <section className="hero relative overflow-hidden">
       <div className="hero-bg pointer-events-none absolute inset-0" aria-hidden="true" />
-      <Skyline />
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-8 px-4 pb-12 pt-8 lg:grid-cols-[1.04fr_1fr] lg:gap-5 lg:pb-14">
         <div className="relative z-10">
@@ -103,11 +86,11 @@ export default function Hero() {
 
           {/* Four features on ONE row at desktop widths (like the reference);
               they may wrap on mobile only. */}
-          <ul className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-3 lg:flex-nowrap lg:gap-x-0 xl:gap-x-0">
+          <ul className="mt-6 grid grid-cols-2 gap-x-2 gap-y-3.5 sm:grid-cols-4 sm:gap-x-0 sm:gap-y-3">
             {FEATURES.map((f) => (
               <li
                 key={f.lines[1]}
-                className="flex items-center gap-2 border-r border-[#c8d9f0] pr-3 text-[0.8rem] font-extrabold leading-tight text-navyDark last:border-r-0 last:pr-0 lg:pr-3.5 lg:text-[0.85rem]"
+                className="flex items-center gap-2 text-[0.78rem] font-extrabold leading-tight text-navyDark sm:border-r sm:border-[#c8d9f0] sm:pr-2.5 sm:text-[0.82rem] sm:last:border-r-0 sm:last:pr-0 lg:pr-3.5 lg:text-[0.85rem]"
               >
                 <FeatureIcon kind={f.icon} />
                 <span>

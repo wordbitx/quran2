@@ -26,7 +26,7 @@ export default function TopBar() {
       <div className="mx-auto max-w-7xl px-3 sm:px-4">
         <div className="flex min-h-[42px] items-center justify-center py-1.5 text-[0.76rem] font-bold sm:flex-wrap sm:justify-between sm:gap-x-3 sm:text-[0.85rem] lg:min-h-[46px] lg:flex-nowrap lg:pl-[168px]">
           {/* Contact — email · WhatsApp + official number */}
-          <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 sm:gap-x-3">
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 sm:gap-x-5 lg:gap-x-8">
             <a
               href={`mailto:${EMAIL}`}
               className="flex items-center gap-1.5 whitespace-nowrap transition hover:text-[#cfe0ff] sm:gap-2"
@@ -45,7 +45,7 @@ export default function TopBar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
-                className="flex h-[18px] w-[18px] items-center justify-center rounded-full bg-[#25d366] text-white sm:h-[19px] sm:w-[19px]"
+                className="flex h-[20px] w-[20px] items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_1px_3px_rgba(0,0,0,.25)] sm:h-[21px] sm:w-[21px]"
               >
                 <svg viewBox="0 0 24 24" fill="currentColor" className="h-[12px] w-[12px]" aria-hidden="true">
                   <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 14.2c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.9 1.5 2 2.4 1.4 1.2 2.5 1.6 2.9 1.7.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .6-.2 1.1z" />
@@ -82,7 +82,7 @@ export default function TopBar() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp"
-              className="flex h-[24px] w-[24px] items-center justify-center rounded-full bg-[#25d366] text-white shadow-[0_2px_6px_rgba(0,0,0,.25)] sm:h-[26px] sm:w-[26px]"
+              className="flex h-[24px] w-[24px] items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_2px_6px_rgba(0,0,0,.25)] sm:h-[26px] sm:w-[26px]"
             >
               <svg viewBox="0 0 24 24" fill="currentColor" className="h-[15px] w-[15px]" aria-hidden="true">
                 <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 14.2c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.9 1.5 2 2.4 1.4 1.2 2.5 1.6 2.9 1.7.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .6-.2 1.1z" />

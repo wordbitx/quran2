@@ -25,6 +25,9 @@
 const RED = "#e0231c";
 const WHITE = "#ffffff";
 
+/** Decorative calligraphy for the three Arabic icons (Nastaliq, as asked). */
+const NASTALIQ_FONT =
+  "'Noto Nastaliq Urdu','Aref Ruqaa','Amiri','Noto Naskh Arabic','Segoe UI',serif";
 const ARABIC_FONT =
   "'Aref Ruqaa','Amiri','Noto Naskh Arabic','Traditional Arabic','Segoe UI',serif";
 
@@ -101,10 +104,10 @@ const BOOK_OPEN_VARIANT = icon(
   "0 0 24 24",
 );
 
-/** Tajweed — Arabic calligraphy. */
+/** Tajweed — Arabic calligraphy in Nastaliq. */
 const TAJWEED_TEXT = icon(
   "qlTajweed",
-  `<text x="32" y="43" text-anchor="middle" font-size="26" font-weight="700" font-family="${ARABIC_FONT}" textLength="58" lengthAdjust="spacingAndGlyphs">تجويد</text>`,
+  `<text x="32" y="42" text-anchor="middle" font-size="19" font-weight="700" font-family="${NASTALIQ_FONT}">تجويد</text>`,
 );
 
 /** Selected Surah Memorization — closed book with a red bookmark. */
@@ -122,10 +125,10 @@ const SIX_KALIMAS = icon(
   `<text x="32" y="46" text-anchor="middle" font-size="38" font-weight="800" fill="${WHITE}" font-family="Arial,Helvetica,sans-serif">6</text>`,
 );
 
-/** Basic Arabic Learning — Arabic calligraphy (عربي, as in the reference). */
+/** Basic Arabic Learning — Arabic calligraphy in Nastaliq (عربي). */
 const ARABIC_TEXT = icon(
   "qlArabic",
-  `<text x="32" y="44" text-anchor="middle" font-size="26" font-weight="700" font-family="${ARABIC_FONT}" textLength="54" lengthAdjust="spacingAndGlyphs">عربي</text>`,
+  `<text x="32" y="42" text-anchor="middle" font-size="19" font-weight="700" font-family="${NASTALIQ_FONT}">عربي</text>`,
 );
 
 /** Quran Tafseer — mosque with dome and two minarets (MDI mosque). */
@@ -136,10 +139,10 @@ const MOSQUE_SKYLINE = icon(
   "0 0 24 24",
 );
 
-/** Seerah of Prophet Muhammad ﷺ — Arabic calligraphy (user-confirmed text). */
+/** Seerah of Prophet Muhammad ﷺ — Arabic calligraphy in Nastaliq. */
 const SEERAH_TEXT = icon(
   "qlSeerah",
-  `<text x="32" y="42" text-anchor="middle" font-size="17" font-weight="700" font-family="${ARABIC_FONT}">محمد ﷺ</text>`,
+  `<text x="32" y="42" text-anchor="middle" font-size="17" font-weight="700" font-family="${NASTALIQ_FONT}">محمد ﷺ</text>`,
 );
 
 /** Islamic Manners & Ethics — handshake (FA handshake). */
