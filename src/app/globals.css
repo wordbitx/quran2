@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Amiri:wght@400;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -114,4 +114,40 @@ a.btn-trial {
   .logo-shine::after {
     animation: none;
   }
+}
+
+/* ------------------------------------------------------------------ */
+/* Reference-design details (top bar · header · hero · specialities)   */
+/* ------------------------------------------------------------------ */
+
+/* Hero backdrop — near-white at the top, cooling into a soft sky blue,
+   like the client's reference design. */
+.hero-bg {
+  background:
+    radial-gradient(120% 130% at 6% 0%, #ffffff 38%, #f4f9ff 70%, #e7f1ff 100%);
+}
+
+/* Hero headline — the reference headline carries a soft white lift plus a
+   very light navy glow, never a hard outline. */
+.hero-h1 {
+  text-shadow: 0 2px 0 rgba(255, 255, 255, 0.85),
+    0 10px 24px rgba(11, 61, 145, 0.1);
+}
+
+/* Speciality icons — a soft blue shadow under each glossy gradient icon. */
+.spec-card .ic svg {
+  filter: drop-shadow(0 4px 5px rgba(9, 45, 105, 0.18));
+}
+
+/* Arabic calligraphy used by the course icons (and the legacy inline
+   <span class="arabic"> versions in data.ts). */
+.arabic {
+  font-family: "Amiri", "Noto Naskh Arabic", "Noto Sans Arabic", serif;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Slim darker edge under the top bar so it reads as a separate strip. */
+.topbar {
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.1);
 }

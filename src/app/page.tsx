@@ -29,23 +29,17 @@ export default function HomePage() {
     <>
       <Hero />
 
-      {/* Our Specialities — the 14 courses */}
-      <section className="py-16">
+      {/* Our Specialities — the 14 courses, in the reference's 7 × 2 grid */}
+      <section className="specialities relative bg-[linear-gradient(180deg,#f4f9ff_0%,#eef6ff_100%)] pb-12 pt-2">
         <div className="mx-auto max-w-7xl px-4">
-          <div className="mx-auto max-w-3xl text-center">
-            <span className="inline-flex items-center gap-4">
-              <span className="h-[2px] w-14 rounded-full bg-brandRed sm:w-28" aria-hidden="true" />
-              <span className="inline-flex items-center gap-3 rounded-full bg-navy px-6 py-2.5 text-xl font-extrabold text-white">
-                Our Specialities
-              </span>
-              <span className="h-[2px] w-14 rounded-full bg-brandRed sm:w-28" aria-hidden="true" />
-            </span>
-            <p className="mt-5 leading-relaxed text-muted">
-              Everything your child — or you — need to read, understand and love the Holy Quran,
-              taught step by step with proper Tajweed. Tap any course to open its page.
-            </p>
+          <div className="mx-auto flex max-w-3xl items-center justify-center gap-4">
+            <span className="h-[2px] w-10 rounded-full bg-brandRed sm:w-24" aria-hidden="true" />
+            <h2 className="inline-flex items-center rounded-full bg-[linear-gradient(90deg,#0a3a86,#0d4ba6)] px-7 py-2.5 text-xl font-extrabold text-white shadow-[0_8px_18px_rgba(11,61,145,0.25)] sm:text-[1.4rem]">
+              Our Specialities
+            </h2>
+            <span className="h-[2px] w-10 rounded-full bg-brandRed sm:w-24" aria-hidden="true" />
           </div>
-          <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-7">
+          <div className="mt-9 grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3 lg:grid-cols-7">
             {COURSES.map((c) => (
               <CourseCard key={c.slug} course={c} />
             ))}
@@ -53,13 +47,17 @@ export default function HomePage() {
           <div className="mt-8 text-center">
             <Link
               href="/courses"
-              className="inline-flex items-center gap-2 rounded-full bg-navy px-6 py-3 font-extrabold text-white transition hover:bg-navy2"
+              className="inline-flex items-center gap-2 rounded-full bg-navy px-6 py-3 font-extrabold text-white shadow-[0_10px_22px_rgba(11,61,145,0.22)] transition hover:bg-navy2"
             >
               View All Courses →
             </Link>
           </div>
         </div>
       </section>
+
+      {/* Navy trust band with the red FREE-trial panel — sits directly under
+          the 14 specialities, exactly like the reference design. */}
+      <TrustBand />
 
       {/* Additional Specialities */}
       <section className="bg-sky2 py-16">
@@ -94,8 +92,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      <TrustBand />
 
       {/* How It Works — 3 steps, reusing the existing Steps component
           (same copy as the About page: book the trial, meet the teacher,
