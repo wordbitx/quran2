@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy: #0b3d91;
+  --navy-2: #0a2f6e;
+  --navy-dark: #062453;
+  --navy-deep: #041a3d;
+  --red: #e0231c;
+  --red-dark: #b91410;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-ink antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--navy);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 3px solid rgba(11, 61, 145, 0.55);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Header trial button: white bold text on red, always — never let nav link
+   colours override it (that was the visibility bug on the old site). */
+nav.main a.btn-trial,
+a.btn-trial {
+  color: #fff !important;
+  font-weight: 800;
+}
+
+/* Hero headline — the original project font (Baloo 2, extra bold), restored
+   for the "One-to-One Online Quran Classes" headline only. */
+.hero-headline {
+  font-family: "Baloo 2", "Nunito", system-ui, sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+/* Hero intro line — bold italic serif, like the reference design. */
+.hero-intro {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 700;
+}
+
+/* Header wordmark tagline — navy BLUE OVAL pill (fully rounded, white text),
+   like the client's own design. */
+.tagline-ribbon {
+  border-radius: 9999px;
+  box-shadow: 0 4px 10px rgba(6, 36, 83, 0.28);
+  white-space: nowrap;
+}
+
+/* Wordmark gradients — subtle premium double-touch: Quran dark navy to
+   lighter navy, Light deep red to brighter red. */
+.grad-navy {
+  background: linear-gradient(135deg, #041a3d 0%, #0b3d91 55%, #1a5fc0 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.grad-red {
+  background: linear-gradient(135deg, #a3120e 0%, #e0231c 55%, #ff5a4d 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Subtle premium shine sweep across the circular header logo. Slow and
+   gentle — one soft pass every few seconds, never flashy. */
+@keyframes logo-shine {
+  0% {
+    transform: translateX(-140%) skewX(-18deg);
+  }
+  55%,
+  100% {
+    transform: translateX(260%) skewX(-18deg);
+  }
+}
+.logo-shine {
+  position: relative;
+  overflow: hidden;
+}
+.logo-shine::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 38%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.55),
+    transparent
+  );
+  animation: logo-shine 4.5s ease-in-out infinite;
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .logo-shine::after {
+    animation: none;
+  }
+}
