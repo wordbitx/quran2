@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Amiri:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Amiri:wght@400;700&family=Aref+Ruqaa:wght@400;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -60,12 +60,22 @@ a.btn-trial {
    like the client's own design. */
 .tagline-ribbon {
   border-radius: 9999px;
-  box-shadow: 0 4px 10px rgba(6, 36, 83, 0.28);
+  background: linear-gradient(180deg, #12509f 0%, #07306f 100%);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 5px 12px rgba(6, 36, 83, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
   white-space: nowrap;
 }
 
-/* Wordmark gradients — subtle premium double-touch: Quran dark navy to
-   lighter navy, Light deep red to brighter red. */
+/* Wordmark — the reference's own rounded, extra-bold lettering (Baloo 2),
+   which is the same family as the hero headline. */
+.wordmark {
+  font-family: "Baloo 2", "Nunito", system-ui, sans-serif;
+}
+
+/* Wordmark gradients (kept for other uses) — Quran dark navy to lighter
+   navy, Light deep red to brighter red. The header wordmark itself now uses
+   the flat reference colours. */
 .grad-navy {
   background: linear-gradient(135deg, #041a3d 0%, #0b3d91 55%, #1a5fc0 100%);
   -webkit-background-clip: text;

@@ -1,13 +1,21 @@
 // Course / speciality icons.
 //
-// The shapes are the SAME established library icons that were approved
-// earlier (Font Awesome Free 6.7.2, Lucide, Tabler) — nothing redrawn by
-// hand. What changed is the COLOUR TREATMENT: every icon now uses the
-// glossy blue gradient of the client's reference design (bright blue at the
-// top, deep navy at the bottom) instead of flat navy, plus the red accents
-// (bookmark ribbons, the star, the swoosh) exactly where the reference has
-// them. Noorani Qaida uses the reference's own "A + Arabic letter tiles"
-// badge motif, and Basic Arabic Learning shows عربي, as in the reference.
+// The shapes are established FREE library icons — nothing redrawn by hand.
+// What the site adds is the COLOUR TREATMENT of the client's reference
+// design: one glossy blue gradient (bright blue at the top, deep navy at the
+// bottom) plus the red accents the reference uses (bookmark ribbons, the
+// little star).
+//
+// Sources (all free licences):
+// - Font Awesome Free 6.7.2 (CC BY 4.0): book-open, mosque, graduation-cap,
+//   book-bookmark, handshake — https://fontawesome.com
+// - Material Design Icons / @mdi/js (Pictogrammers, Apache 2.0):
+//   book-open-variant (Hifz), mosque (Quran Tafseer), hands-pray (Masnoon
+//   Duas) — https://pictogrammers.com/library/mdi/
+// - Arabic calligraphy: vector <text> in Aref Ruqaa / Amiri (Tajweed,
+//   Basic Arabic عربي, Seerah محمد ﷺ).
+// - Noorani Qaida: the reference's own "A + Arabic letter tiles" badge.
+// - Six Kalimas: big white "6" in a blue circle, as in the reference.
 //
 // Each icon carries its own <defs> with a UNIQUE gradient id, so several of
 // them can sit on one page without their gradients colliding.
@@ -22,7 +30,7 @@ function grad(id: string): string {
 }
 
 const ARABIC_FONT =
-  "'Amiri','Noto Naskh Arabic','Traditional Arabic','Segoe UI',serif";
+  "'Aref Ruqaa','Amiri','Noto Naskh Arabic','Traditional Arabic','Segoe UI',serif";
 
 /**
  * Open book — Quran Translation.
@@ -34,8 +42,7 @@ const BOOK_OPEN = `<svg viewBox="0 0 576 512" aria-hidden="true">${grad(
 
 /**
  * Open book with a red bookmark ribbon — Quran Reading (Nazra).
- * Same Font Awesome "book-open" shape as the translation icon, with the red
- * ribbon of the reference design hanging from the spine.
+ * Same Font Awesome "book-open" shape, with the red ribbons of the reference.
  */
 const BOOK_OPEN_RIBBON = `<svg viewBox="0 0 576 512" aria-hidden="true">${grad(
   "qlNazraOpen",
@@ -43,23 +50,23 @@ const BOOK_OPEN_RIBBON = `<svg viewBox="0 0 576 512" aria-hidden="true">${grad(
 
 /**
  * Three rounded tiles — "A" over two Arabic letters — Noorani Qaida.
- * Built from plain geometry (rounded rectangles + lettering), following the
- * badge motif of the client's reference design.
+ * Plain geometry (rounded rectangles + lettering), following the badge motif
+ * of the client's reference design.
  */
 const QAIDA_BADGE = `<svg viewBox="0 0 64 64" aria-hidden="true">${grad(
   "qlQaida",
 )}<rect x="20" y="3" width="24" height="24" rx="7" fill="url(#qlQaida)"/><rect x="7" y="31" width="24" height="24" rx="7" fill="url(#qlQaida)"/><rect x="33" y="31" width="24" height="24" rx="7" fill="url(#qlQaida)"/><text x="32" y="16" text-anchor="middle" dominant-baseline="central" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="800" fill="${WHITE}">A</text><text x="19" y="43" text-anchor="middle" dominant-baseline="central" font-family="${ARABIC_FONT}" font-size="17" font-weight="700" fill="${WHITE}">أ</text><text x="45" y="43" text-anchor="middle" dominant-baseline="central" font-family="${ARABIC_FONT}" font-size="17" font-weight="700" fill="${WHITE}">ب</text></svg>`;
 
 /**
- * Praying hands — Masnoon Duas.
- * Source: Font Awesome Free 6.7.2, solid "hands-praying" (viewBox 0 0 640 512).
+ * Two raised praying hands — Masnoon Duas.
+ * Source: Material Design Icons (@mdi/js), "hands-pray" (viewBox 0 0 24 24).
  */
-const HANDS_PRAYING = `<svg viewBox="0 0 640 512" aria-hidden="true">${grad(
+const HANDS_PRAY = `<svg viewBox="0 0 24 24" aria-hidden="true">${grad(
   "qlHands",
-)}<path fill="url(#qlHands)" d="M351.2 4.8c3.2-2 6.6-3.3 10-4.1c4.7-1 9.6-.9 14.1 .1c7.7 1.8 14.8 6.5 19.4 13.6L514.6 194.2c8.8 13.1 13.4 28.6 13.4 44.4l0 73.5c0 6.9 4.4 13 10.9 15.2l79.2 26.4C631.2 358 640 370.2 640 384l0 96c0 9.9-4.6 19.3-12.5 25.4s-18.1 8.1-27.7 5.5L431 465.9c-56-14.9-95-65.7-95-123.7L336 224c0-17.7 14.3-32 32-32s32 14.3 32 32l0 80c0 8.8 7.2 16 16 16s16-7.2 16-16l0-84.9c0-7-1.8-13.8-5.3-19.8L340.3 48.1c-1.7-3-2.9-6.1-3.6-9.3c-1-4.7-1-9.6 .1-14.1c1.9-8 6.8-15.2 14.3-19.9zm-62.4 0c7.5 4.6 12.4 11.9 14.3 19.9c1.1 4.6 1.2 9.4 .1 14.1c-.7 3.2-1.9 6.3-3.6 9.3L213.3 199.3c-3.5 6-5.3 12.9-5.3 19.8l0 84.9c0 8.8 7.2 16 16 16s16-7.2 16-16l0-80c0-17.7 14.3-32 32-32s32 14.3 32 32l0 118.2c0 58-39 108.7-95 123.7l-168.7 45c-9.6 2.6-19.9 .5-27.7-5.5S0 490 0 480l0-96c0-13.8 8.8-26 21.9-30.4l79.2-26.4c6.5-2.2 10.9-8.3 10.9-15.2l0-73.5c0-15.8 4.7-31.2 13.4-44.4L245.2 14.5c4.6-7.1 11.7-11.8 19.4-13.6c4.6-1.1 9.4-1.2 14.1-.1c3.5 .8 6.9 2.1 10 4.1z"/></svg>`;
+)}<path fill="url(#qlHands)" d="M11.43 9.67C11.47 9.78 11.5 9.88 11.5 10V15.22C11.5 15.72 11.31 16.2 10.97 16.57L8.18 19.62L4.78 16.22L6 15L8.8 2.86C8.92 2.36 9.37 2 9.89 2C10.5 2 11 2.5 11 3.11V8.07C10.84 8.03 10.67 8 10.5 8C9.4 8 8.5 8.9 8.5 10V13C8.5 13.28 8.72 13.5 9 13.5S9.5 13.28 9.5 13V10C9.5 9.45 9.95 9 10.5 9C10.69 9 10.85 9.07 11 9.16C11.12 9.23 11.21 9.32 11.3 9.42C11.33 9.46 11.36 9.5 11.38 9.55C11.4 9.59 11.42 9.63 11.43 9.67M2 19L6 22L7.17 20.73L3.72 17.28L2 19M18 15L15.2 2.86C15.08 2.36 14.63 2 14.11 2C13.5 2 13 2.5 13 3.11V8.07C13.16 8.03 13.33 8 13.5 8C14.6 8 15.5 8.9 15.5 10V13C15.5 13.28 15.28 13.5 15 13.5S14.5 13.28 14.5 13V10C14.5 9.45 14.05 9 13.5 9C13.31 9 13.15 9.07 13 9.16C12.88 9.23 12.79 9.32 12.71 9.42C12.68 9.46 12.64 9.5 12.62 9.55C12.6 9.59 12.58 9.63 12.57 9.67C12.53 9.78 12.5 9.88 12.5 10V15.22C12.5 15.72 12.69 16.2 13.03 16.57L15.82 19.62L19.22 16.22L18 15M20.28 17.28L16.83 20.73L18 22L22 19L20.28 17.28Z"/></svg>`;
 
 /**
- * Mosque with dome and minarets — Salah (Namaz).
+ * Mosque with dome, minarets and arches — Salah (Namaz).
  * Source: Font Awesome Free 6.7.2, solid "mosque" (viewBox 0 0 640 512).
  */
 const MOSQUE = `<svg viewBox="0 0 640 512" aria-hidden="true">${grad(
@@ -75,35 +82,26 @@ const GRAD_CAP = `<svg viewBox="0 0 640 512" aria-hidden="true">${grad(
 )}<path fill="url(#qlGrad)" d="M320 32c-8.1 0-16.1 1.4-23.7 4.1L15.8 137.4C6.3 140.9 0 149.9 0 160s6.3 19.1 15.8 22.6l57.9 20.9C57.3 229.3 48 259.8 48 291.9l0 28.1c0 28.4-10.8 57.7-22.3 80.8c-6.5 13-13.9 25.8-22.5 37.6C0 442.7-.9 448.3 .9 453.4s6 8.9 11.2 10.2l64 16c4.2 1.1 8.7 .3 12.4-2s6.3-6.1 7.1-10.4c8.6-42.8 4.3-81.2-2.1-108.7C90.3 344.3 86 329.8 80 316.5l0-24.6c0-30.2 10.2-58.7 27.9-81.5c12.9-15.5 29.6-28 49.2-35.7l157-61.7c8.2-3.2 17.5 .8 20.7 9s-.8 17.5-9 20.7l-157 61.7c-12.4 4.9-23.3 12.4-32.2 21.6l159.6 57.6c7.6 2.7 15.6 4.1 23.7 4.1s16.1-1.4 23.7-4.1L624.2 182.6c9.5-3.4 15.8-12.5 15.8-22.6s-6.3-19.1-15.8-22.6L343.7 36.1C336.1 33.4 328.1 32 320 32zM128 408c0 35.3 86 72 192 72s192-36.7 192-72L496.7 262.6 354.5 314c-11.1 4-22.8 6-34.5 6s-23.5-2-34.5-6L143.3 262.6 128 408z"/></svg>`;
 
 /**
- * Person reading an open book — Hifz-ul-Quran.
- * Source: Font Awesome Free 6.7.2, solid "book-open-reader" (viewBox 0 0 512 512).
+ * Open book with page lines — Hifz-ul-Quran.
+ * Source: Material Design Icons (@mdi/js), "book-open-variant" (0 0 24 24).
  */
-const BOOK_READER = `<svg viewBox="0 0 512 512" aria-hidden="true">${grad(
+const BOOK_OPEN_VARIANT = `<svg viewBox="0 0 24 24" aria-hidden="true">${grad(
   "qlHifz",
-)}<path fill="url(#qlHifz)" d="M160 96a96 96 0 1 1 192 0A96 96 0 1 1 160 96zm80 152l0 264-48.4-24.2c-20.9-10.4-43.5-17-66.8-19.3l-96-9.6C12.5 457.2 0 443.5 0 427L0 224c0-17.7 14.3-32 32-32l30.3 0c63.6 0 125.6 19.6 177.7 56zm32 264l0-264c52.1-36.4 114.1-56 177.7-56l30.3 0c17.7 0 32 14.3 32 32l0 203c0 16.4-12.5 30.2-28.8 31.8l-96 9.6c-23.2 2.3-45.9 8.9-66.8 19.3L272 512z"/></svg>`;
+)}<path fill="url(#qlHifz)" d="M12 21.5C10.65 20.65 8.2 20 6.5 20C4.85 20 3.15 20.3 1.75 21.05C1.65 21.1 1.6 21.1 1.5 21.1C1.25 21.1 1 20.85 1 20.6V6C1.6 5.55 2.25 5.25 3 5C4.11 4.65 5.33 4.5 6.5 4.5C8.45 4.5 10.55 4.9 12 6C13.45 4.9 15.55 4.5 17.5 4.5C18.67 4.5 19.89 4.65 21 5C21.75 5.25 22.4 5.55 23 6V20.6C23 20.85 22.75 21.1 22.5 21.1C22.4 21.1 22.35 21.1 22.25 21.05C20.85 20.3 19.15 20 17.5 20C15.8 20 13.35 20.65 12 21.5M12 8V19.5C13.35 18.65 15.8 18 17.5 18C18.7 18 19.9 18.15 21 18.5V7C19.9 6.65 18.7 6.5 17.5 6.5C15.8 6.5 13.35 7.15 12 8M13 11.5C14.11 10.82 15.6 10.5 17.5 10.5C18.41 10.5 19.26 10.59 20 10.78V9.23C19.13 9.08 18.29 9 17.5 9C15.73 9 14.23 9.28 13 9.84V11.5M17.5 11.67C15.79 11.67 14.29 11.93 13 12.46V14.15C14.11 13.5 15.6 13.16 17.5 13.16C18.54 13.16 19.38 13.24 20 13.4V11.9C19.13 11.74 18.29 11.67 17.5 11.67M20 14.57C19.13 14.41 18.29 14.33 17.5 14.33C15.67 14.33 14.17 14.6 13 15.13V16.82C14.11 16.16 15.6 15.83 17.5 15.83C18.54 15.83 19.38 15.91 20 16.07V14.57Z"/></svg>`;
 
 /** Arabic calligraphy — Tajweed. */
 const TAJWEED_TEXT = `<svg viewBox="0 0 64 64" aria-hidden="true">${grad(
   "qlTajweed",
-)}<text x="32" y="42" text-anchor="middle" font-size="25" font-weight="700" fill="url(#qlTajweed)" font-family="${ARABIC_FONT}">تجويد</text></svg>`;
+)}<text x="32" y="43" text-anchor="middle" font-size="26" font-weight="700" fill="url(#qlTajweed)" font-family="${ARABIC_FONT}" textLength="58" lengthAdjust="spacingAndGlyphs">تجويد</text></svg>`;
 
 /**
- * Book with bookmark — Quran Reading (Nazra).
+ * Closed book with bookmark — Selected Surah Memorization.
  * Source: Font Awesome Free 6.7.2, solid "book-bookmark" (viewBox 0 0 448 512),
  * with the red bookmark ribbon of the reference.
  */
 const BOOK_BOOKMARK = `<svg viewBox="0 0 448 512" aria-hidden="true">${grad(
-  "qlNazra",
-)}<path fill="url(#qlNazra)" d="M0 96C0 43 43 0 96 0l96 0 0 190.7c0 13.4 15.5 20.9 26 12.5L272 160l54 43.2c10.5 8.4 26 .9 26-12.5L352 0l32 0 32 0c17.7 0 32 14.3 32 32l0 320c0 17.7-14.3 32-32 32l0 64c17.7 0 32 14.3 32 32s-14.3 32-32 32l-32 0L96 512c-53 0-96-43-96-96L0 96zM64 416c0 17.7 14.3 32 32 32l256 0 0-64L96 384c-17.7 0-32 14.3-32 32z"/><path d="M212 436h24v58l-12-11-12 11z" fill="${RED}"/></svg>`;
-
-/**
- * Quran book with crescent and star — Selected Surah Memorization.
- * Source: Font Awesome Free 6.7.2, solid "book-quran" (viewBox 0 0 448 512);
- * book + crescent in the blue gradient, the star in red, as in the reference.
- */
-const BOOK_QURAN = `<svg viewBox="0 0 448 512" aria-hidden="true">${grad(
   "qlSurah",
-)}<path fill="url(#qlSurah)" d="M352 0c53 0 96 43 96 96l0 320c0 53-43 96-96 96L64 512l-32 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l0-64c-17.7 0-32-14.3-32-32L0 32C0 14.3 14.3 0 32 0L64 0 352 0zm0 384L96 384l0 64 256 0c17.7 0 32-14.3 32-32s-14.3-32-32-32zM96 192c0 70.7 57.3 128 128 128c25.6 0 49.5-7.5 69.5-20.5c3.2-2.1 4.5-6.2 3.1-9.7s-5.2-5.6-9-4.8c-6.1 1.2-12.5 1.9-19 1.9c-52.4 0-94.9-42.5-94.9-94.9s42.5-94.9 94.9-94.9c6.5 0 12.8 .7 19 1.9c3.8 .8 7.5-1.3 9-4.8s.2-7.6-3.1-9.7C273.5 71.5 249.6 64 224 64C153.3 64 96 121.3 96 192z"/><path d="M274.1 150.2l-8.9 21.4-23.1 1.9c-5.7 .5-8 7.5-3.7 11.2L256 199.8l-5.4 22.6c-1.3 5.5 4.7 9.9 9.6 6.9L280 217.2l19.8 12.1c4.9 3 10.9-1.4 9.6-6.9L304 199.8l17.6-15.1c4.3-3.7 2-10.8-3.7-11.2l-23.1-1.9-8.9-21.4c-2.2-5.3-9.6-5.3-11.8 0z" fill="${RED}"/></svg>`;
+)}<path fill="url(#qlSurah)" d="M0 96C0 43 43 0 96 0l96 0 0 190.7c0 13.4 15.5 20.9 26 12.5L272 160l54 43.2c10.5 8.4 26 .9 26-12.5L352 0l32 0 32 0c17.7 0 32 14.3 32 32l0 320c0 17.7-14.3 32-32 32l0 64c17.7 0 32 14.3 32 32s-14.3 32-32 32l-32 0L96 512c-53 0-96-43-96-96L0 96zM64 416c0 17.7 14.3 32 32 32l256 0 0-64L96 384c-17.7 0-32 14.3-32 32z"/><path d="M212 436h24v58l-12-11-12 11z" fill="${RED}"/></svg>`;
 
 /** Big white "6" in a blue-gradient circle — Six Kalimas. */
 const SIX_KALIMAS = `<svg viewBox="0 0 64 64" aria-hidden="true">${grad(
@@ -113,20 +111,21 @@ const SIX_KALIMAS = `<svg viewBox="0 0 64 64" aria-hidden="true">${grad(
 /** Arabic calligraphy — Basic Arabic Learning (عربي, as in the reference). */
 const ARABIC_TEXT = `<svg viewBox="0 0 64 64" aria-hidden="true">${grad(
   "qlArabic",
-)}<text x="32" y="42" text-anchor="middle" font-size="25" font-weight="700" fill="url(#qlArabic)" font-family="${ARABIC_FONT}">عربي</text></svg>`;
+)}<text x="32" y="44" text-anchor="middle" font-size="26" font-weight="700" fill="url(#qlArabic)" font-family="${ARABIC_FONT}" textLength="54" lengthAdjust="spacingAndGlyphs">عربي</text></svg>`;
 
 /**
- * Mosque skyline with two minarets — Quran Tafseer.
- * Source: Tabler Icons (MIT), outline "building-mosque" (viewBox 0 0 24 24).
+ * Mosque with dome and two minarets — Quran Tafseer.
+ * Source: Material Design Icons (@mdi/js), "mosque" (viewBox 0 0 24 24),
+ * filled silhouette like the reference.
  */
-const MOSQUE_SKYLINE = `<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">${grad(
+const MOSQUE_SKYLINE = `<svg viewBox="0 0 24 24" aria-hidden="true">${grad(
   "qlTafseer",
-)}<g stroke="url(#qlTafseer)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h7v-2a2 2 0 1 1 4 0v2h7"/><path d="M4 21v-10"/><path d="M20 21v-10"/><path d="M4 16h3v-3h10v3h3"/><path d="M17 13a5 5 0 0 0 -10 0"/><path d="M21 10.5c0 -.329 -.077 -.653 -.224 -.947l-.776 -1.553l-.776 1.553a2.118 2.118 0 0 0 -.224 .947a.5 .5 0 0 0 .5 .5h1a.5 .5 0 0 0 .5 -.5"/><path d="M5 10.5c0 -.329 -.077 -.653 -.224 -.947l-.776 -1.553l-.776 1.553a2.118 2.118 0 0 0 -.224 .947a.5 .5 0 0 0 .5 .5h1a.5 .5 0 0 0 .5 -.5"/><path d="M12 2a2 2 0 1 0 2 2"/><path d="M12 6v2"/></g></svg>`;
+)}<path fill="url(#qlTafseer)" d="M7 8H17C17.3 8 17.6 8.1 17.8 8.1C17.9 7.8 18 7.4 18 7.1C18 5.8 17.4 4.6 16.3 3.9L12 1L7.7 3.8C6.7 4.6 6 5.8 6 7.1C6 7.5 6.1 7.8 6.2 8.1C6.4 8.1 6.7 8 7 8M24 7C24 5.9 22 4 22 4S20 5.9 20 7C20 7.7 20.4 8.4 21 8.7V13H19V11C19 9.9 18.1 9 17 9H7C5.9 9 5 9.9 5 11V13H3V8.7C3.6 8.4 4 7.7 4 7C4 5.9 2 4 2 4S0 5.9 0 7C0 7.7 .4 8.4 1 8.7V21H10V17C10 15.9 10.9 15 12 15S14 15.9 14 17V21H23V8.7C23.6 8.4 24 7.7 24 7Z"/></svg>`;
 
 /** Arabic calligraphy — Seerah of Prophet Muhammad ﷺ (user-confirmed text). */
 const SEERAH_TEXT = `<svg viewBox="0 0 64 64" aria-hidden="true">${grad(
   "qlSeerah",
-)}<text x="32" y="40" text-anchor="middle" font-size="17" font-weight="700" fill="url(#qlSeerah)" font-family="${ARABIC_FONT}">محمد ﷺ</text></svg>`;
+)}<text x="32" y="42" text-anchor="middle" font-size="17" font-weight="700" fill="url(#qlSeerah)" font-family="${ARABIC_FONT}">محمد ﷺ</text></svg>`;
 
 /**
  * Handshake — Islamic Manners & Ethics.
@@ -138,20 +137,20 @@ const HANDSHAKE = `<svg viewBox="0 0 640 512" aria-hidden="true">${grad(
 
 /** Icon SVG by course slug. Every slug has an entry — no fallback needed. */
 export const COURSE_ICONS: Record<string, string> = {
-  "quran-translation": BOOK_OPEN, // Font Awesome Free — book-open
+  "quran-translation": BOOK_OPEN, // Font Awesome — book-open
   "noorani-qaida": QAIDA_BADGE, // reference "A + Arabic letter tiles" badge
-  "masnoon-duas": HANDS_PRAYING, // Font Awesome Free — hands-praying
-  "salah-namaz": MOSQUE, // Font Awesome Free — mosque
-  "islamic-studies": GRAD_CAP, // Font Awesome Free — graduation-cap
-  "hifz-ul-quran": BOOK_READER, // Font Awesome Free — book-open-reader
+  "masnoon-duas": HANDS_PRAY, // MDI — hands-pray
+  "salah-namaz": MOSQUE, // Font Awesome — mosque
+  "islamic-studies": GRAD_CAP, // Font Awesome — graduation-cap
+  "hifz-ul-quran": BOOK_OPEN_VARIANT, // MDI — book-open-variant
   tajweed: TAJWEED_TEXT, // Arabic calligraphy text
   "quran-reading-nazra": BOOK_OPEN_RIBBON, // open book + red ribbons
-  "selected-surah-memorization": BOOK_BOOKMARK, // Font Awesome Free — book-bookmark
+  "selected-surah-memorization": BOOK_BOOKMARK, // Font Awesome — book-bookmark
   "six-kalimas": SIX_KALIMAS, // big "6" in a blue circle
   "basic-arabic-learning": ARABIC_TEXT, // Arabic calligraphy text
-  "quran-tafseer": MOSQUE_SKYLINE, // Tabler Icons — building-mosque
+  "quran-tafseer": MOSQUE_SKYLINE, // MDI — mosque
   seerah: SEERAH_TEXT, // Arabic calligraphy text
-  "islamic-manners-ethics": HANDSHAKE, // Font Awesome Free — handshake
+  "islamic-manners-ethics": HANDSHAKE, // Font Awesome — handshake
 };
 
 /** Resolve the icon HTML for a course (override first, original icon as fallback). */

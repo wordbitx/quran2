@@ -73,20 +73,18 @@ export default function Hero() {
             <p className="hero-intro text-[1.28rem] leading-snug text-navyDark sm:text-[1.45rem]">
               Help Your Child Learn the Holy Quran from Home
             </p>
-            {/* Premium red swoosh underline, like the reference: one soft line
-                under the whole intro, sagging gently down in the middle. */}
+            {/* Red swoosh underline — exactly the reference's shape: thin at
+                both ends, a soft even sag through the middle, and it stops
+                short of the right edge of the line. */}
             <svg
-              className="mt-1 block h-[13px] w-full"
-              viewBox="0 0 600 14"
+              className="mt-1.5 block h-[15px] w-[86%]"
+              viewBox="0 0 600 18"
               preserveAspectRatio="none"
               aria-hidden="true"
             >
               <path
-                d="M4 3 C 150 12.5, 450 13, 596 3"
-                stroke="#e0231c"
-                strokeWidth="3.4"
-                fill="none"
-                strokeLinecap="round"
+                d="M4 4 C 170 13.6, 400 14, 596 3.4 C 400 17, 170 16.4, 4 4 Z"
+                fill="#e0231c"
               />
             </svg>
           </div>
@@ -136,33 +134,9 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Hero photo — no frame: just the photo with its curved left edge and
-            the two arc ribbons (blue outside, red inside) hugging that curve,
-            exactly like the reference. */}
+        {/* Hero photo — no frame and no decorative lines: just the photo with
+            its softly curved left edge, as requested. */}
         <div className="relative mx-auto w-[94%] max-w-[560px] justify-self-center lg:w-full lg:max-w-[600px] lg:justify-self-end">
-          <svg
-            className="pointer-events-none absolute -left-[46px] top-0 z-0 h-full w-[100px] max-[640px]:hidden"
-            viewBox="0 0 100 300"
-            preserveAspectRatio="none"
-            fill="none"
-            aria-hidden="true"
-          >
-            <path
-              d="M96 -12 C -3 80, -3 220, 96 312"
-              stroke="#0f4fae"
-              strokeWidth="6.5"
-              strokeLinecap="round"
-              vectorEffect="non-scaling-stroke"
-            />
-            <path
-              d="M96 -12 C 15 80, 15 220, 96 312"
-              stroke="#e0231c"
-              strokeWidth="6.5"
-              strokeLinecap="round"
-              vectorEffect="non-scaling-stroke"
-            />
-          </svg>
-
           <div className="relative z-10 overflow-hidden rounded-[28px] shadow-cardLg lg:rounded-[34px] lg:rounded-l-[58px]">
             <Image
               src="/hero.jpg"
