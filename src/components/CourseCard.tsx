@@ -6,22 +6,18 @@ export default function CourseCard({ course }: { course: Course }) {
   return (
     <Link
       href={`/courses/${course.slug}`}
-      className="spec-card group flex flex-col items-center rounded-card border border-cardBorder bg-white px-2 py-4 text-center shadow-[0_3px_12px_rgba(6,36,83,0.05)] transition hover:-translate-y-1 hover:shadow-card"
+      className="spec-card group flex flex-col items-center justify-start rounded-[16px] border border-[#dbe7f8] bg-white px-2 pb-3 pt-3 text-center shadow-[0_6px_18px_rgba(9,45,105,0.07)] transition duration-300 hover:-translate-y-1 hover:border-[#b9d1f2] hover:shadow-[0_18px_32px_rgba(9,45,105,0.16)]"
     >
-      <span
-        className="ic flex h-[4.25rem] w-[4.25rem] items-center justify-center text-navy [&_svg]:h-14 [&_svg]:max-w-full"
-        dangerouslySetInnerHTML={{ __html: courseIcon(course.slug, course.icon) }}
-        aria-hidden="true"
-      />
-      <h3 className="mt-2 text-[1.02rem] font-extrabold leading-snug text-navyDark">
+      <span className="relative flex h-[3.4rem] w-[3.4rem] items-center justify-center">
+        <span
+          className="ic relative flex h-full w-full items-center justify-center text-navy transition duration-300 group-hover:scale-[1.07] [&_svg]:h-[2.9rem] [&_svg]:max-w-full"
+          dangerouslySetInnerHTML={{ __html: courseIcon(course.slug, course.icon) }}
+          aria-hidden="true"
+        />
+      </span>
+      <h3 className="mt-1.5 text-[0.97rem] font-extrabold leading-[1.2] text-[#0b2a5e]">
         {course.name}
       </h3>
-      <span className="mt-1 inline-flex items-center gap-1 text-[0.85rem] font-bold text-brandRed opacity-0 transition group-hover:opacity-100">
-        View Course
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4" aria-hidden="true">
-          <path d="M5 12h14M13 6l6 6-6 6" />
-        </svg>
-      </span>
     </Link>
   );
 }
