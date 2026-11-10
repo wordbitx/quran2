@@ -24,9 +24,9 @@ export default function TopBar() {
   return (
     <div className="topbar relative z-20 bg-[linear-gradient(90deg,#052a63_0%,#0b3d91_45%,#0a3480_100%)] text-white">
       <div className="mx-auto max-w-7xl px-3 sm:px-4">
-        <div className="flex min-h-[42px] items-center justify-center py-1.5 text-[0.76rem] font-bold sm:flex-wrap sm:justify-between sm:gap-x-3 sm:text-[0.85rem] lg:min-h-[46px] lg:flex-nowrap lg:pl-[168px]">
+        <div className="flex min-h-[42px] items-center justify-center py-1.5 text-[0.76rem] font-bold sm:flex-wrap sm:justify-between sm:gap-x-3 sm:pl-[118px] sm:text-[0.85rem] lg:min-h-[46px] lg:flex-nowrap lg:pl-[122px] xl:pl-[138px]">
           {/* Contact — email · WhatsApp + official number */}
-          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 sm:gap-x-5 lg:gap-x-8">
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 sm:gap-x-5 lg:gap-x-12">
             <a
               href={`mailto:${EMAIL}`}
               className="flex items-center gap-1.5 whitespace-nowrap transition hover:text-[#cfe0ff] sm:gap-2"

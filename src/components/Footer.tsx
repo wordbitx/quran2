@@ -38,24 +38,24 @@ export default function Footer() {
                 alt="Quran Light Institute logo"
                 width={640}
                 height={640}
-                className="h-[68px] w-[68px] shrink-0 rounded-full object-cover ring-2 ring-white/70 shadow-[0_8px_20px_rgba(0,0,0,0.35)]"
+                className="h-[76px] w-[76px] shrink-0 rounded-full object-cover ring-2 ring-white/70 shadow-[0_8px_20px_rgba(0,0,0,0.35)]"
               />
-              <div className="wordmark leading-none">
-                <p className="text-[1.55rem] font-extrabold leading-none tracking-tight">
+              <div className="wordmark flex flex-col leading-none">
+                <p className="block whitespace-nowrap text-[1.95rem] font-extrabold leading-none tracking-tight sm:text-[2.1rem]">
                   <span className="text-white">Quran</span>{" "}
-                  <span className="text-[#ff5f56]">Light</span>
+                  <span className="text-[#c8102e]">Light</span>
                 </p>
-                <div className="mt-[6px] flex items-center gap-1.5">
+                <div className="mt-[7px] flex w-full items-center justify-between gap-1.5">
                   <span className="flex flex-col gap-[3px]" aria-hidden="true">
-                    <span className="h-[2px] w-4 rounded-full bg-[#ff5f56]" />
-                    <span className="h-[2px] w-4 rounded-full bg-[#ff5f56]" />
+                    <span className="h-[2px] w-4 rounded-full bg-[#e0231c]" />
+                    <span className="h-[2px] w-4 rounded-full bg-[#e0231c]" />
                   </span>
-                  <span className="text-[0.6rem] font-extrabold tracking-[4px] text-white/85">
+                  <span className="whitespace-nowrap text-[0.6rem] font-extrabold tracking-[3.5px] text-white/85">
                     INSTITUTE
                   </span>
                   <span className="flex flex-col gap-[3px]" aria-hidden="true">
-                    <span className="h-[2px] w-4 rounded-full bg-[#ff5f56]" />
-                    <span className="h-[2px] w-4 rounded-full bg-[#ff5f56]" />
+                    <span className="h-[2px] w-4 rounded-full bg-[#e0231c]" />
+                    <span className="h-[2px] w-4 rounded-full bg-[#e0231c]" />
                   </span>
                 </div>
               </div>

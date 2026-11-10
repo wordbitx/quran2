@@ -61,25 +61,27 @@ export default function Header() {
             />
           </span>
 
-          <span className="wordmark relative z-10 leading-none">
-            <span className="block text-[1.22rem] font-extrabold leading-none tracking-tight sm:text-[1.55rem] lg:text-[2rem] xl:text-[2.3rem]">
+          <span className="wordmark relative z-10 flex flex-col leading-none">
+            <span className="block whitespace-nowrap text-[1.32rem] font-extrabold leading-none tracking-tight sm:text-[1.7rem] lg:text-[2.15rem] xl:text-[2.55rem]">
               <span className="text-[#0b3b8f]">Quran</span>{" "}
               <span className="text-[#c8102e]">Light</span>
             </span>
-            <span className="mt-[6px] flex items-center gap-1.5 sm:mt-[7px] sm:gap-2">
+            {/* The red double-dashes reach both ends of the wordmark, so the
+                name and the INSTITUTE rule share exactly the same width. */}
+            <span className="mt-[6px] flex w-full items-center justify-between gap-1.5 sm:mt-[7px] sm:gap-2">
               <span className="flex flex-col gap-[3px]" aria-hidden="true">
-                <span className="h-[2px] w-2.5 rounded-full bg-brandRed sm:w-5 lg:w-9" />
-                <span className="h-[2px] w-2.5 rounded-full bg-brandRed sm:w-5 lg:w-9" />
+                <span className="h-[2px] w-2.5 rounded-full bg-brandRed sm:w-5 lg:w-8" />
+                <span className="h-[2px] w-2.5 rounded-full bg-brandRed sm:w-5 lg:w-8" />
               </span>
-              <span className="text-[0.62rem] font-extrabold tracking-[2.6px] text-navy sm:text-[0.86rem] sm:tracking-[5px] lg:text-[1.02rem] lg:tracking-[7px]">
+              <span className="whitespace-nowrap text-[0.62rem] font-extrabold tracking-[2.6px] text-navy sm:text-[0.86rem] sm:tracking-[5px] lg:text-[1.02rem] lg:tracking-[7px]">
                 INSTITUTE
               </span>
               <span className="flex flex-col gap-[3px]" aria-hidden="true">
-                <span className="h-[2px] w-2.5 rounded-full bg-brandRed sm:w-5 lg:w-9" />
-                <span className="h-[2px] w-2.5 rounded-full bg-brandRed sm:w-5 lg:w-9" />
+                <span className="h-[2px] w-2.5 rounded-full bg-brandRed sm:w-5 lg:w-8" />
+                <span className="h-[2px] w-2.5 rounded-full bg-brandRed sm:w-5 lg:w-8" />
               </span>
             </span>
-            <span className="tagline-ribbon mt-[6px] inline-block px-2.5 py-[3px] text-[0.57rem] font-bold text-white sm:mt-[8px] sm:px-3 sm:py-[3px] sm:text-[0.7rem] lg:mt-[9px] lg:px-4 lg:text-[0.82rem]">
+            <span className="tagline-ribbon mt-[6px] self-start px-2.5 py-[3px] text-[0.57rem] font-bold text-white sm:mt-[8px] sm:px-3 sm:py-[3px] sm:text-[0.7rem] lg:mt-[9px] lg:px-4 lg:text-[0.82rem]">
               {SITE_TAGLINE}
             </span>
           </span>
