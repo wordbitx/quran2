@@ -24,7 +24,7 @@ export default function TopBar() {
   return (
     <div className="topbar relative z-20 bg-[linear-gradient(90deg,#052a63_0%,#0b3d91_45%,#0a3480_100%)] text-white">
       <div className="mx-auto max-w-7xl px-3 sm:px-4">
-        <div className="flex min-h-[44px] flex-col items-center justify-center gap-y-1 py-1.5 text-[0.76rem] font-bold sm:flex-row sm:flex-wrap sm:justify-between sm:gap-x-3 sm:text-[0.85rem] lg:min-h-[46px] lg:flex-nowrap lg:pl-[168px]">
+        <div className="flex min-h-[42px] items-center justify-center py-1.5 text-[0.76rem] font-bold sm:flex-wrap sm:justify-between sm:gap-x-3 sm:text-[0.85rem] lg:min-h-[46px] lg:flex-nowrap lg:pl-[168px]">
           {/* Contact — email · WhatsApp + official number */}
           <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 sm:gap-x-3">
             <a
@@ -57,8 +57,9 @@ export default function TopBar() {
             </span>
           </div>
 
-          {/* Follow Us — Facebook · YouTube · WhatsApp */}
-          <div className="flex items-center gap-2 sm:gap-2.5">
+          {/* Follow Us — Facebook · YouTube · WhatsApp (hidden on phones, as
+              requested: mobile shows only the email and WhatsApp number) */}
+          <div className="hidden items-center gap-2 sm:gap-2.5 md:flex">
             <span className="text-white/85">Follow Us:</span>
             <span
               className="flex h-[24px] w-[24px] items-center justify-center rounded-full bg-[#1877f2] text-[0.95rem] font-black leading-none text-white shadow-[0_2px_6px_rgba(0,0,0,.25)] sm:h-[26px] sm:w-[26px] sm:text-[1rem]"
